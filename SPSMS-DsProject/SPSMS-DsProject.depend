@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1590630581 source:d:\coding\spsms-dsproject\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedListType.h"
+	<string.h>
+
+1590630872 d:\coding\spsms-dsproject\linkedlisttype.h
+	<stdlib.h>
+	"Global.h"
+
+1590631196 d:\coding\spsms-dsproject\global.h
+
+1590622330 source:d:\coding\spsms-dsproject\linkedlisttype.c
+	"LinkedListType.h"
+
