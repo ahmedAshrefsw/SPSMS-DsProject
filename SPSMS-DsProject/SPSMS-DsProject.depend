@@ -14,12 +14,18 @@
 1590622330 source:d:\coding\spsms-dsproject\linkedlisttype.c
 	"LinkedListType.h"
 
-1590622330 source:d:\coding\github\spsms-dsproject\spsms-dsproject\linkedlisttype.c
+1590691433 source:d:\coding\github\spsms-dsproject\spsms-dsproject\linkedlisttype.c
 	"LinkedListType.h"
 
-1590630872 d:\coding\github\spsms-dsproject\spsms-dsproject\linkedlisttype.h
+1590691495 d:\coding\github\spsms-dsproject\spsms-dsproject\linkedlisttype.h
 	<stdlib.h>
 	"Global.h"
 
-1590631196 d:\coding\github\spsms-dsproject\spsms-dsproject\global.h
+1590695151 d:\coding\github\spsms-dsproject\spsms-dsproject\global.h
+
+1590692397 source:d:\coding\github\spsms-dsproject\spsms-dsproject\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedListType.h"
+	<string.h>
 

@@ -2,7 +2,7 @@
 #define NUMBER_OF_STRINGS 3
 #define MAX_STRING_SIZE 50
 #define MAX_NAME_SIZE 100
-#define MAX_REG_COURSES_SIZE 50
+#define NUMBER_OF_COURSES 50
 
 typedef struct courseFullData{
 
@@ -14,8 +14,8 @@ typedef struct courseFullData{
 
 typedef struct {
 
-    char studentName[MAX_NAME_SIZE];
-    char coursesReg[MAX_REG_COURSES_SIZE];
+    int ID;
+    char coursesReg[NUMBER_OF_COURSES][MAX_STRING_SIZE];
     int regsize;
 
 }studentData;

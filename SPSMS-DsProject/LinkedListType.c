@@ -48,4 +48,10 @@ EntryType showItem(LinkedList *pl , int pos){
     return temp->entry;
 }
 
-
+void TraverseList(LinkedList* pl, void(*Visit)(EntryType)){
+	ListNode *p=pl->head;
+	while(p){
+		(*Visit)(p->entry);
+		p=p->next;
+	}
+}

@@ -30,3 +30,4 @@ void replaceItem(LinkedList *pl , EntryType newItem , int pos  );
 
 void destroyList(LinkedList *pl);
 
+void TraverseList(LinkedList* pl, void(*Visit)(EntryType));
