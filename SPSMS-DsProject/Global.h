@@ -1,7 +1,6 @@
 
 #define NUMBER_OF_STRINGS 3
 #define MAX_STRING_SIZE 50
-#define MAX_NAME_SIZE 100
 #define NUMBER_OF_COURSES 50
 
 typedef struct courseFullData{

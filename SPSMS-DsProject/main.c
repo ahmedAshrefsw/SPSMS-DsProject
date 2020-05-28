@@ -4,13 +4,14 @@
 #include <string.h>
 #include <ctype.h>
 
-// use scanCourse to scan the coure and save it on enntryType
+// use scanCourse to scan the course and save it on enntryType
 void scanCourse (EntryType *course);
 void scanPrereq (EntryType *course);// sub fun
 
 void printCourse (EntryType course);// debug fun
 
 void scanStudentData(studentData *student);
+int coursePreCheack (studentData *student, EntryType * targetedCourse);
 
 int main()
 {
@@ -31,19 +32,28 @@ int main()
 
     }while(DataEntryFlag);
 
-    // to print all the linked list
-    TraverseList(&list,&printCourse);
-
     studentData student;
     scanStudentData(&student);
 
-    printf("student ID : \n",student.ID);
-    for(int i =0; i<student.regsize;i++)
-        printf("student reg : %s \n",student.coursesReg[i]);
+    printf("\n this is list of the avilable cources \n\n");
+    // to print all the linked list
+    TraverseList(&list,&printCourse);
+
+    int coursePos ;
+    printf("Enter number of the course you want to register : \n");
+    scanf("%d",&coursePos);
+
+    EntryType targetedCourse = showItem(&list,coursePos);
+
+    int result = coursePreCheack(&student,&targetedCourse);
+    if(result)
+        printf("you can register the course wow \n");
+    else
+        printf("you can't register the course ylaaaa  \n");
+
 
     return 0;
 }
-
 
 void scanPrereq (EntryType *course){
     char str [MAX_STRING_SIZE];
@@ -75,10 +85,12 @@ void scanCourse (EntryType *course){
 }
 
 void printCourse (EntryType course){
-    printf("Course Name : %s \n",course.courseName);
-    printf("Course Number Of pre : %d \n",course.preSize);
-    for(int i = 0 ; i < course.preSize;i++)
-        printf("Course pre req : %s \n",course.coursePre[i]);
+
+    printf("Course Name : %s  || prereq : %d \n",course.courseName,course.preSize);
+
+    //printf("Course Number Of pre : %d \n",course.preSize);
+    //for(int i = 0 ; i < course.preSize;i++)
+        //printf("Course pre req : %s \n",course.coursePre[i]);
 
 }
 
@@ -100,5 +112,20 @@ void scanStudentData(studentData *student){
         scanf("%d",&enterCourse);
     }while(enterCourse);
 
+
+}
+
+int coursePreCheack (studentData *student, EntryType * targetedCourse){
+        int check = 0;
+    for( int preIndex = 0 ; preIndex<targetedCourse->preSize;preIndex++){
+
+        for(int regesterdCourseIndex =0; regesterdCourseIndex<student->regsize; regesterdCourseIndex++){
+            if( (strcmp(student->coursesReg[regesterdCourseIndex],targetedCourse->coursePre[preIndex])) == 0 ){
+                    check ++;
+                    break;
+            }
+        }
+    }
+    return check == targetedCourse->preSize;
 
 }

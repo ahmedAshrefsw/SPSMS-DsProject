@@ -50,8 +50,11 @@ EntryType showItem(LinkedList *pl , int pos){
 
 void TraverseList(LinkedList* pl, void(*Visit)(EntryType)){
 	ListNode *p=pl->head;
+	int i = 0 ;
 	while(p){
+        printf("%d -  ",i);
 		(*Visit)(p->entry);
+		i++;
 		p=p->next;
 	}
 }
