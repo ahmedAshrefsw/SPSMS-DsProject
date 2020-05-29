@@ -32,13 +32,19 @@ int main()
 
     }while(DataEntryFlag);
 
+    int checkOtherStudent =1 ;
+do{
     studentData student;
     scanStudentData(&student);
 
     printf("\n this is list of the avilable cources \n\n");
     // to print all the linked list
-    TraverseList(&list,&printCourse);
 
+
+    int checkOtherCourse =1;
+    do{
+
+    TraverseList(&list,&printCourse);
     int coursePos ;
     printf("Enter number of the course you want to register : \n");
     scanf("%d",&coursePos);
@@ -51,6 +57,14 @@ int main()
     else
         printf("you can't register the course ylaaaa  \n");
 
+    printf("if you want to check for another course press 1 /to add another student or exit 0");
+    scanf("%d",&checkOtherCourse);
+
+    }while(checkOtherCourse);
+
+    printf("\n if you want to enter another student 1 \ to exit the program 0");
+    scanf("%d",&checkOtherStudent);
+}while(checkOtherStudent);
 
     return 0;
 }
