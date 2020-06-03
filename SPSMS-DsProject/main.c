@@ -53,9 +53,9 @@ do{
 
     int result = coursePreCheack(&student,&targetedCourse);
     if(result)
-        printf("you can register the course wow \n");
+        printf("you can register the course \n");
     else
-        printf("you can't register the course ylaaaa  \n");
+        printf("you can't register the course  \n");
 
     printf("if you want to check for another course press 1 /to add another student or exit 0");
     scanf("%d",&checkOtherCourse);
@@ -70,12 +70,13 @@ do{
 }
 
 void scanPrereq (EntryType *course){
+
     char str [MAX_STRING_SIZE];
+
     printf("Enter the subject prereq: \n");
     scanf("%s",&str);
-    printf("%d",course->preSize);
+
     strcpy(course->coursePre[course->preSize],strlwr(str));
-    printf("here \n");
     course->preSize ++;
 
 }
@@ -102,10 +103,6 @@ void printCourse (EntryType course){
 
     printf("Course Name : %s  || prereq : %d \n",course.courseName,course.preSize);
 
-    //printf("Course Number Of pre : %d \n",course.preSize);
-    //for(int i = 0 ; i < course.preSize;i++)
-        //printf("Course pre req : %s \n",course.coursePre[i]);
-
 }
 
 void scanStudentData(studentData *student){
@@ -122,6 +119,7 @@ void scanStudentData(studentData *student){
 
         strcpy(student->coursesReg[student->regsize],strlwr(studentCourse));
         student->regsize++;
+
         printf("if you want to enter more course 1 to terminate 0");
         scanf("%d",&enterCourse);
     }while(enterCourse);
