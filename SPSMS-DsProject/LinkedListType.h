@@ -12,7 +12,7 @@ int size ;
 ListNode *head;
 }LinkedList;
 
-void creatList(LinkedList *pl);
+void createList(LinkedList *pl);
 
 int listSize(LinkedList *pl);
 
@@ -23,11 +23,5 @@ int listFull(LinkedList *pl);
 void insertItem(LinkedList *pl, EntryType e, int pos);
 
 EntryType showItem(LinkedList *pl , int pos);
-
-void deleteItem(LinkedList *pl, EntryType *pe, int pos );
-
-void replaceItem(LinkedList *pl , EntryType newItem , int pos  );
-
-void destroyList(LinkedList *pl);
 
 void TraverseList(LinkedList* pl, void(*Visit)(EntryType));

@@ -1,6 +1,6 @@
 #include "LinkedListType.h"
 
-void creatList(LinkedList *pl){
+void createList(LinkedList *pl){
     pl->head = NULL;
     pl->size=0;
 }
